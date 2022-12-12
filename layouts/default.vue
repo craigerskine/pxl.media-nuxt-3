@@ -49,7 +49,7 @@
         using
         <a href="https://code.visualstudio.com/" class="mx-2 text-blue-100 motion-safe:transition hover:(text-blue-500)">Code</a>
         +
-        <a href="https://nuxtjs.org/" class="mx-2 text-blue-100 motion-safe:transition hover:(text-blue-500)">Nuxt</a>
+        <a href="https://nuxt.com/" class="mx-2 text-blue-100 motion-safe:transition hover:(text-blue-500)">Nuxt</a>
         and is powered by a responsive layout.
       </p>
     </footer>
