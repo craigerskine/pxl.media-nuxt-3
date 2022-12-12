@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nuxi dev",
-    "build": "nuxi guild",
+    "build": "nuxi build",
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
