@@ -3,7 +3,7 @@
     <div :class="['box w-full flex flex-wrap relative shadow-xl', { 'ring-2 ring-red-500': pending }]">
       <figure class="cover w-full h-16 bg-black/80 flex relative">
         <figcaption class="w-full bg-(cover center) backdrop-opacity-50" :style="'background-image: url(\'/assets/img/games/'+ slug +'.jpg\')'"></figcaption>
-        <content-query :path="'/_platform/'+ platform" v-slot="{ data }">
+        <!-- <content-query :path="'/_platform/'+ platform" v-slot="{ data }">
           <figure v-for="item of data" :key="item.title" class="group w-1/2 p-2 flex items-end justify-end absolute inset-y-0 right-0">
             <figcaption class="bg-gradient-to-l from-[#111] via-[#111] to-transparent block absolute inset-0 opacity-90"></figcaption>
             <nuxt-link :to="'/platform/'+ platform +'/'" class="text-gray-200/50 block relative motion-safe:transition-all hover:(text-white opacity-100)">
@@ -13,7 +13,7 @@
               </svg>
             </nuxt-link>
           </figure>
-        </content-query>
+        </content-query> -->
       </figure>
       <b class="h-px bg-white opacity-10 absolute top-0 inset-x-0" aria-hidden="true"></b>
       <div class="details w-full flex">
@@ -28,14 +28,14 @@
             <li class="flex-1">
               <ul class="tags flex space-x-4">
                 <li v-for="g in genre" :key="g">
-                  <content-query :path="('/_genre/'+ g)" v-slot="{ data }">
+                  <!-- <content-query :path="('/_genre/'+ g)" v-slot="{ data }">
                     <nuxt-link v-for="item of data" :key="item.slug" :to="'/genre/'+ item.slug +'/'" class="group relative motion-safe:transition hover:(text-white)" :title="g.title">
                       <i :class="['fa-light fa-fw', 'fa-'+ item.icon]"></i>
                       <b class="py-1 px-2 bg-black text-(gray-400 xs) whitespace-nowrap absolute bottom-full left-1/2 invisible opacity-[.0001] rounded transform translate-y-1 -translate-x-1/2 shadow-lg motion-safe:transition-all group-hover:(visible opacity-100 -translate-y-1) group-focus:(visible opacity-100 -translate-y-1)">
                         {{ item.title }}
                       </b>
                     </nuxt-link>
-                  </content-query>
+                  </content-query> -->
                 </li>
               </ul>
             </li>
