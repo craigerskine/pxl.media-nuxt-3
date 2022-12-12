@@ -79,25 +79,25 @@
 </template>
 
 <script setup>
-  const homeGamesCount = await queryContent('games').only(['title']).find();
-  const homeGamesPhysicalCount = await queryContent('games').only(['title']).where({physical: true,}).find();
-  const homeGamesDigitalCount = await queryContent('games').only(['title']).where({digital: true,}).find();
-  const homeGamesPendingCount = await queryContent('games').only(['title']).where({pending: true,}).find();
-  const homeSystemsCount = await queryContent('systems').only(['title']).find();
-  const homeSystemsConsoleCount = await queryContent('systems').only(['title']).where({system_type: { $containsAny: ['console', 'hybrid']}}).find();
-  const homeSystemsHandheldCount = await queryContent('systems').only(['title']).where({system_type: { $containsAny: ['handheld', 'hybrid']}}).find();
-  const homeSystemsMiniCount = await queryContent('systems').only(['title']).where({system_type: { $eq: 'mini'}}).find();
-  const homeControllersCount = await queryContent('controllers').only(['title']).find();
-  const homeControllersWirelessCount = await queryContent('controllers').only(['title']).where({connection: { $containsAny: ['2.4Ghz', 'Bluetooth']}}).find();
-  const homeControllersUsbCount = await queryContent('controllers').only(['title']).where({connection: { $containsAny: ['USB']}}).find();
-  const homeControllersAdaptersCount = await queryContent('controllers').only(['title']).where({variation: { $containsAny: ['Adapter']}}).find();
-  const homeGamesPending = await queryContent('games')
+  const { data: homeGamesCount } = await useAsyncData(() => queryContent('games').only(['title']).find());
+  const { data: homeGamesPhysicalCount } = await useAsyncData(() => queryContent('games').only(['title']).where({physical: true,}).find());
+  const { data: homeGamesDigitalCount } = await useAsyncData(() => queryContent('games').only(['title']).where({digital: true,}).find());
+  const { data: homeGamesPendingCount } = await useAsyncData(() => queryContent('games').only(['title']).where({pending: true,}).find());
+  const { data: homeSystemsCount } = await useAsyncData(() => queryContent('systems').only(['title']).find());
+  const { data: homeSystemsConsoleCount } = await useAsyncData(() => queryContent('systems').only(['title']).where({system_type: { $containsAny: ['console', 'hybrid']}}).find());
+  const { data: homeSystemsHandheldCount } = await useAsyncData(() => queryContent('systems').only(['title']).where({system_type: { $containsAny: ['handheld', 'hybrid']}}).find());
+  const { data: homeSystemsMiniCount } = await useAsyncData(() => queryContent('systems').only(['title']).where({system_type: { $eq: 'mini'}}).find());
+  const { data: homeControllersCount } = await useAsyncData(() => queryContent('controllers').only(['title']).find());
+  const { data: homeControllersWirelessCount } = await useAsyncData(() => queryContent('controllers').only(['title']).where({connection: { $containsAny: ['2.4Ghz', 'Bluetooth']}}).find());
+  const { data: homeControllersUsbCount } = await useAsyncData(() => queryContent('controllers').only(['title']).where({connection: { $containsAny: ['USB']}}).find());
+  const { data: homeControllersAdaptersCount } = await useAsyncData(() => queryContent('controllers').only(['title']).where({variation: { $containsAny: ['Adapter']}}).find());
+  const { data: homeGamesPending } = await useAsyncData(() => queryContent('games')
     .sort({ posted: -1 })
     .where({ pending: { $eq: true } })
-    .find();
-  const homeGamesRecently = await queryContent('games')
+    .find());
+  const { data: homeGamesRecently } = await useAsyncData(() => queryContent('games')
     .sort({ posted: -1 })
     .where({ pending: { $eq: false } })
     .limit(6)
-    .find();
+    .find());
 </script>
