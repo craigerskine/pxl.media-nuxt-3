@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-  const games = await queryContent('games').where({ pending: true }).sort({ posted: -1 }).find();
+  const { data: games } = await useAsyncData(() => queryContent('games').where({ pending: true }).sort({ posted: -1 }).find());
 
   useHead({
     title: 'Pending / Pre-Ordered Games'

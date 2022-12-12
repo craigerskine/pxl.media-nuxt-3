@@ -51,10 +51,10 @@
 </template>
 
 <script setup>
-  const controllers = await queryContent('controllers').sort({ title: 1, $numeric: true }).find();
+  const { data: controllers } = await useAsyncData(() => queryContent('controllers').sort({ title: 1, $numeric: true }).find());
 
   function controllersFiltered(company) {
-    return controllers.filter((item) => item.company === company)
+    return this.controllers.filter((item) => item.company === company)
   };
 
   useHead({

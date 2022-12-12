@@ -29,16 +29,16 @@
 
 <script setup>
   const route = useRoute();
-  const games = await queryContent('games').sort({ title: 1, $numeric: true }).find();
+  const { data: games } = await useAsyncData(() => queryContent('games').sort({ title: 1, $numeric: true }).find());
 
   // pagination
   const pageCurrent = parseInt(`${route.params.page[1]}`);
   const pagePer = 24;
-  const pageLast = Math.ceil(games.length / pagePer);
-  const pageLastCount = games.length % pagePer === 0 ? pagePer : games.length % pagePer;
+  const pageLast = Math.ceil(this.games.length / pagePer);
+  const pageLastCount = this.games.length % pagePer === 0 ? pagePer : this.games.length % pagePer;
   const pageSkip = () => {
     if (pageCurrent === 1) {return 0;}
-    if (pageCurrent === pageLast) { return games.length - pageLastCount; }
+    if (pageCurrent === pageLast) { return this.games.length - pageLastCount; }
     return (pageCurrent - 1) * pagePer;
   };
 
