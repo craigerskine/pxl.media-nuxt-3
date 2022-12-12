@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!--
-      screen width regardless of parent container width
-      -ml-[50vw] -mr-[50vw] w-screen relative left-1/2 right-1/2
-    -->
     <ul class="lg:(flex justify-center space-x-8)">
       <li class="stat mx-auto py-1 w-full max-w-sm lg:(my-10 max-w-none)">
         <mast
