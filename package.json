@@ -1,0 +1,20 @@
+{
+  "name": "pxl.media",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nuxi dev",
+    "build": "nuxi guild",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.2.2",
+    "@twind/core": "^1.0.1",
+    "@twind/preset-autoprefix": "^1.0.1",
+    "@twind/preset-tailwind": "^1.0.1",
+    "nuxt": "3.0.0"
+  }
+}
