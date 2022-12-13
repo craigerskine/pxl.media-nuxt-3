@@ -20,7 +20,7 @@
             <li class="nav-item" v-for="nav in ['platform', 'genre']" :key="nav">
               <nuxt-link :to="'/'+ nav +'/'"
                 class="group p-4 block text-white relative motion-safe:transition hover:(opacity-100)"
-                :class="[$route.path.includes(nav) ? 'active opacity-100' : 'opacity-40']"
+                :class="[$route.path.includes(nav +'/') ? 'active opacity-100' : 'opacity-40']"
                 active-class=""
                 exact-active-class=""
               >
@@ -33,7 +33,7 @@
             </li>
           </ul>
         </nav>
-        <search></search>
+        <search-inline />
       </div>
     </header>
     <main class="pt-8 flex-1">
