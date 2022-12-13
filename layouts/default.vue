@@ -69,7 +69,7 @@
       lang: 'en',
     },
     bodyAttrs: {
-      style: 'display: hidden',
+      style: 'display: none',
     },
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} : pxl.media : qrayg\'s game room` : 'pxl.media : qrayg\'s game room';
