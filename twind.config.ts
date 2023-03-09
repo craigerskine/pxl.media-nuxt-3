@@ -13,12 +13,12 @@ const config = defineConfig({
       'lg': '960px',
     },
     extend: {
-      colors: {
-        gray: presetTailwind().theme.colors.neutral,
-      },
-      fontFamily: {
-        sans: 'Roboto,'+ presetTailwind().theme.fontFamily.sans,
-      },
+      colors: ({ theme }) => ({
+        gray: theme('colors.neutral'),
+      }),
+      fontFamily: ({ theme }) => ({
+        sans: `Roboto,${theme('fontFamily.sans')}`,
+      }),
     },
   },
   rules: [
@@ -36,8 +36,8 @@ const globalCss = {
   '.input-search:hover + i': { '@apply': 'opacity-100', },
   '.input-search::-webkit-search-cancel-button': { '@apply': 'hidden', },
   // page transitions
-  '.page-enter-active,.page-leave-active': { '@apply': 'motion-safe:(transition-all)', },
-  '.page-enter,.page-leave-to': { '@apply': 'transform blur-lg opacity-0', },
+  '.page-enter-active,.page-leave-active': { '@apply': 'motion-safe:(transition)', },
+  '.page-enter,.page-leave-to': { '@apply': 'transform translate-y-3 opacity-0', },
 };
 
 export { config, globalCss };

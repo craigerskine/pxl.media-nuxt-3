@@ -1,3 +1,37 @@
+<script setup lang="ts">
+  import { install, injectGlobal } from '@twind/core'
+  import { config, globalCss } from '../twind.config'
+
+  install(config)
+  injectGlobal(globalCss)
+
+  useHead({
+    htmlAttrs: {
+      lang: 'en',
+    },
+    bodyAttrs: {
+      style: 'display: none',
+    },
+    titleTemplate: (titleChunk) => {
+      return titleChunk ? `${titleChunk} : pxl.media : qrayg\'s game room` : 'pxl.media : qrayg\'s game room';
+    },
+    meta: [
+    { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'qrayg\'s game room' },
+      { name: 'format-detection', content: 'telephone=no' },
+    ],
+    link: [
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/a2bf4ed495.js', body: true },
+    ],
+  })
+</script>
+
 <template>
   <div class="min-h-screen flex-(& col)">
     <header>
@@ -57,36 +91,3 @@
     <nuxt-loading-indicator color="#60A5FA" />
   </div>
 </template>
-
-<script setup>
-  import { install, injectGlobal } from '@twind/core'
-  import { config, globalCss } from '/twind.config'
-  install(config)
-  injectGlobal(globalCss)
-
-  useHead({
-    htmlAttrs: {
-      lang: 'en',
-    },
-    bodyAttrs: {
-      style: 'display: none',
-    },
-    titleTemplate: (titleChunk) => {
-      return titleChunk ? `${titleChunk} : pxl.media : qrayg\'s game room` : 'pxl.media : qrayg\'s game room';
-    },
-    meta: [
-    { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'qrayg\'s game room' },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
-    script: [
-      { src: 'https://kit.fontawesome.com/a2bf4ed495.js', body: true },
-    ],
-  })
-</script>

@@ -2,7 +2,7 @@
   <div>
     <content-query path="/games/" :sort="{ title: 1, $numeric: true }" :where="{ _file: { $contains: $route.params.search } }" :limit="pagePer" :skip="pageSkip()" v-slot="{ data }">
       <heading :subtext="games.length">
-        <b v-text="query"></b> Games
+        <b class="mr-2" v-text="query"></b> <b>Games</b>
         <template v-slot:nav>
           <pagination v-if="games.length > pagePer" class="ml-auto" :paginatePath="'/search/'+ query +'/'" :paginateTotal="games.length" />
         </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="h-hr mt-8 mb-6 pb-2 px-4 text-(gray-400 sm center) font-bold uppercase flex-(& col) items-center relative md:(text-left items-start)">
     <div class="pb-2 w-full flex-(& wrap) items-center">
-      <h1 class="relative">
+      <h1 class="flex-(& wrap) items-center relative">
         <b v-if="subtext" class="mr-2 text-xs opacity-75">{{ subtext }}</b>
         <slot />
         <b v-if="subtext_alt" class="ml-4 mr-2 text-xs opacity-75">{{ subtext_alt }}</b>

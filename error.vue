@@ -1,3 +1,13 @@
+<script setup lang="ts">
+  useHead({
+    title: '404',
+  });
+
+  defineProps([
+    'error',
+  ]);
+</script>
+
 <template>
   <NuxtLayout>
     <h1 class="m-auto py-8 px-4 text-gray-500 text-[calc(4vw+4vh)] leading-none font-bold text-center md:(py-32)">
@@ -7,13 +17,3 @@
     </h1>
   </NuxtLayout>
 </template>
-
-<script setup>
-  useHead({
-    title: '404',
-  });
-
-  defineProps([
-    'error',
-  ]);
-</script>
